@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Ambar</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section> 
+					<h3>ELIMINAR FILAS</h3>
+				</section>
+				<section> 
+					<p>Con la sentencia DELETE podemos eliminar filas de la tabla:</p>
+					<section>
+						<ul>
+						  <li>DELETE FROM cuidad3;</li>
+						</ul>
+					</section>
+					<p>En este caso se han eliminado todas las filas de la tabla "ciudades". Si deseamos eliminar solo determinadas filas usamos la clausula WHERE: filas</p>
+				</section>
+				<section>
+						<section>
+							  <ul>
+								<li>SELECT * FROM granciudad;</li>
+								<li>FROM granciudad WHERE id=6;</li>
+								<li>SELECT * FROM granciudad;</li>
+							  </ul>
+						  </section>
+				</section>
+				<section> 
+					<p>Tambien podemos usar las clausulas LIMIT y ORDER BY en la sentencia DELETE, por ejemplo, para eliminar los ultimos o primeros registros de una tabla.  Por ejemplo, si queremos eliminar las dos primeras ciudades que aparecen en la tabla ordenando alfabeticamente por su nombre realizaremos lo siguiente:</p>
+				</section>
+				<section> 
+					<section>
+						<ul>
+						  <li>select * FROM  granciudad;</li>
+						  <li>DELETE FROM granciudad ORDER BY nombre ASC LIMIT 2;</li>
+						  <li>SELECT * from granciudad;</li>
+						</ul>
+					</section>
+				</section>
+				<section> 
+					<p>Como podemos observar ha eliminado "madrid" y "bilbao que son las dos primeras ciudades si ordenamos la lista alfabeticca,ente por el campo "nombre". Si en LIMIT hubiesemos puesto 1 solo habria eliminado Bilbao, si hubiesemos puesto 3 habria eliminado "Bilbao, Madrid, Valencia."</p>
+				</section>
+				<section> 
+					<section>
+						<h3>VACIAR UNA TABLA</h3>
+					</section>
+						<section> 
+							<h3>TRUNCATE</h3>
+							<p>Cuando queremos eliminar todas las filas de una tabla, vimos en el punto anterior que podiamos usar una sentencia DELETE sin condiciones.</p>
+							<p>La diferencia es que DELETE hace un borrado secuencial de la tabla, fila a fila, pero TRUNCATE borra la tabla y la vuelve a crear vacia, lo que es mucho mas eficiente.</p>
+						</section>
+						<section> 
+						<section> 
+							<section>
+								<ul>
+								  <li>TRUNCATE granciudad;</li>
+								  <li>SELECT *FROM granciudad;</li>
+								</ul>
+								<p>Como podemos observar hemos vaciado la tabla "granciudad de registros".</p>
+							</section>
+							</section>
+						</section>
+						<section>
+				<section></section>
+							<h3>GRACIAS POR SU ATENCIÓN</h3>
+					<section> 
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
